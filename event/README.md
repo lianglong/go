@@ -15,6 +15,7 @@ Go 实现的轻量级的事件管理、调度工具库
 
 ```go
 package main
+
 import (
 	"fmt"
 	
@@ -26,10 +27,12 @@ type user struct{
     Name string
 }
 
+//自定义事件
 type UserRegistered struct{
     Data *user
 }
 
+//自定义事件
 type ChangeUserPassWord struct{
     Data *user
 }
@@ -37,6 +40,7 @@ type ChangeUserPassWord struct{
 type SendEmailListener struct{
 }
 
+//返回需要监听的事件列表 #可一次订阅多个事件
 func (listener SendEmailListener)Listen() []interface{} {
     return []interface{}{
         UserRegistered{},
@@ -44,6 +48,7 @@ func (listener SendEmailListener)Listen() []interface{} {
     }
 }
 
+//事件处理
 func (listener SendEmailListener)Handle(e interface{}) error {
     switch ev := e.(type) {
     case UserRegistered:
@@ -54,12 +59,13 @@ func (listener SendEmailListener)Handle(e interface{}) error {
     return nil
 }
 
+//事件优先级 #数值越大优先级越高
 func (listener SendEmailListener)Priority() int  {
     return event.NormalPriority
 }
 
 func main() {
-    eventDispatcher := event.New()
+	eventDispatcher := event.New()
 	// 注册事件监听器
 	eventDispatcher.Subscribe(SendEmailListener{})
 	
