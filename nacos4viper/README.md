@@ -2,6 +2,10 @@ Go spf13/viper的nacos远程配置实现
 
 ## 快速使用
 
+```shell
+go get -u -v github.com/lianglong/go/nacos4viper
+```
+
 ```go
 package main
 

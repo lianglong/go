@@ -13,6 +13,10 @@ Go 实现的轻量级的事件管理、调度工具库
 
 ## 快速使用
 
+```shell
+go get -u -v github.com/lianglong/go/event
+```
+
 ```go
 package main
 
