@@ -1,0 +1,7 @@
+setting:
+  config_center:
+    enabled: true
+    provider: nacos
+    endpoint: http://127.0.0.1:8848
+    path: /nacos
+    client_param: NamespaceId=nacos4viper&Username=nacos4viper&Password=nacos4viper&DataId=setting&Group=dev
