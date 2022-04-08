@@ -18,7 +18,7 @@ func main() {
 
 	if err := viper.AddSecureRemoteProvider(
 		"nacos",
-		"http://nacos.inc.eyisen.com",
+		"http://127.0.0.1:8848",
 		"/nacos",
 		"NamespaceId=nacos4viper&Username=nacos4viper&Password=nacos4viper&DataId=setting&Group=dev",
 	); err != nil {
