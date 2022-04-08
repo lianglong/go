@@ -1,0 +1,25 @@
+setting:
+  application:
+    app_name: nacos4viper
+    app_env: dev
+  config_center:
+    enabled: true
+    provider: nacos
+    endpoint: http://nacos.inc.eyisen.com
+    path: /nacos
+    client_param: NamespaceId=nacos4viper&Username=nacos4viper&Password=nacos4viper&DataId=setting&Group=dev
+  database:
+    default:
+      driver: mysql
+      host: localhost
+      user:
+      password:
+      dbname:
+      pool:
+        max_idle_conns: 1 #空闲连接池中连接的最大数量
+        max_open_conns: 10 #打开数据库连接的最大数量
+        conn_max_life_time: 60 #连接可复用的最大时间
+  cache:
+    driver: redis
+    host: localhost
+    port: 6379
