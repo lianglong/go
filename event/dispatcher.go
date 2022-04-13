@@ -31,8 +31,8 @@ func (ed *Dispatcher) Publish(e interface{}) {
 }
 
 func (ed *Dispatcher) getHandlers(eventName string) ListenerQueue {
-	ed.lock.RLock()
-	defer ed.lock.RUnlock()
+	//ed.lock.RLock()
+	//defer ed.lock.RUnlock()
 	if lq, ok := ed.handlers[eventName]; ok && lq != nil {
 		return *lq
 	}
